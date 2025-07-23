@@ -96,13 +96,22 @@ export const TechStack = () => {
   const duplicatedTechStack = [...techStack, ...techStack];
 
   return (
-    <section ref={sectionRef} className="py-20 px-6 bg-muted/20 overflow-hidden">
-      <div className="container mx-auto max-w-6xl">
+    <section ref={sectionRef} id="techstack" className="py-20 px-6 bg-secondary/5 overflow-hidden relative">
+      {/* Animated circuit board background */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute top-10 left-10 w-20 h-20 border border-primary/30 rounded"></div>
+        <div className="absolute top-20 right-20 w-16 h-16 border border-accent/30 rounded-full"></div>
+        <div className="absolute bottom-20 left-20 w-24 h-24 border border-primary/30 rounded"></div>
+        <div className="absolute bottom-10 right-10 w-12 h-12 border border-accent/30 rounded-full"></div>
+      </div>
+      
+      <div className="container mx-auto max-w-6xl relative z-10">
         <h2 
           ref={titleRef}
-          className="text-4xl md:text-5xl font-bold text-center mb-16 text-gradient"
+          className="text-4xl md:text-5xl font-bold text-center mb-16 font-orbitron"
         >
-          Tech Stack
+          <span className="neon-text">Tech</span>{' '}
+          <span className="text-gradient">Stack</span>
         </h2>
         
         <div ref={carouselRef} className="relative">
@@ -110,21 +119,27 @@ export const TechStack = () => {
             {duplicatedTechStack.map((tech, index) => (
               <div
                 key={index}
-                className="tech-item flex-shrink-0 w-32 h-32 bg-card rounded-xl border border-tech-border flex flex-col items-center justify-center card-shadow hover-glow cursor-pointer group"
+                className="tech-item flex-shrink-0 w-32 h-32 glass-card neon-border rounded-xl flex flex-col items-center justify-center card-shadow hover-glow cursor-pointer group relative"
               >
-                <div className="text-3xl mb-2 group-hover:scale-110 transition-transform duration-200">
+                <div className="text-3xl mb-2 group-hover:scale-125 group-hover:animate-bounce transition-all duration-300">
                   {tech.logo}
                 </div>
-                <span className="text-sm font-medium text-card-foreground group-hover:text-primary transition-colors duration-200">
+                <span className="text-sm font-medium font-mono text-card-foreground group-hover:text-primary transition-colors duration-200">
                   {tech.name}
                 </span>
+                
+                {/* Glowing particles */}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="absolute top-2 right-2 w-1 h-1 bg-primary rounded-full animate-ping"></div>
+                  <div className="absolute bottom-2 left-2 w-1 h-1 bg-accent rounded-full animate-ping" style={{ animationDelay: '0.5s' }}></div>
+                </div>
               </div>
             ))}
           </div>
           
-          {/* Gradient overlays */}
-          <div className="absolute left-0 top-0 w-20 h-full bg-gradient-to-r from-muted/20 to-transparent z-10"></div>
-          <div className="absolute right-0 top-0 w-20 h-full bg-gradient-to-l from-muted/20 to-transparent z-10"></div>
+          {/* Enhanced gradient overlays */}
+          <div className="absolute left-0 top-0 w-32 h-full bg-gradient-to-r from-background via-background/80 to-transparent z-10"></div>
+          <div className="absolute right-0 top-0 w-32 h-full bg-gradient-to-l from-background via-background/80 to-transparent z-10"></div>
         </div>
       </div>
     </section>

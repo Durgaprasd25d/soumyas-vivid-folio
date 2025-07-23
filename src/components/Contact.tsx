@@ -125,13 +125,17 @@ export const Contact = () => {
   };
 
   return (
-    <section ref={sectionRef} className="py-20 px-6 bg-muted/30">
-      <div className="container mx-auto max-w-6xl">
+    <section ref={sectionRef} id="contact" className="py-20 px-6 bg-secondary/10 relative">
+      {/* Contact background effect */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(120,255,120,0.1)_0%,transparent_70%)]"></div>
+      
+      <div className="container mx-auto max-w-6xl relative z-10">
         <h2 
           ref={titleRef}
-          className="text-4xl md:text-5xl font-bold text-center mb-16 text-gradient"
+          className="text-4xl md:text-5xl font-bold text-center mb-16 font-orbitron"
         >
-          Let's Connect
+          <span className="neon-text">Let's</span>{' '}
+          <span className="text-gradient">Connect</span>
         </h2>
         
         <div className="grid lg:grid-cols-2 gap-12">

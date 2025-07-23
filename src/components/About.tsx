@@ -94,13 +94,17 @@ export const About = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-20 px-6 bg-muted/30">
-      <div className="container mx-auto max-w-6xl">
+    <section ref={sectionRef} id="about" className="py-20 px-6 bg-secondary/10 relative">
+      {/* Background grid effect */}
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(120,255,120,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(120,255,120,0.03)_1px,transparent_1px)] bg-[size:50px_50px]"></div>
+      
+      <div className="container mx-auto max-w-6xl relative z-10">
         <h2 
           ref={titleRef}
-          className="text-4xl md:text-5xl font-bold text-center mb-16 text-gradient"
+          className="text-4xl md:text-5xl font-bold text-center mb-16 font-orbitron"
         >
-          About Me
+          <span className="neon-text">About</span>{' '}
+          <span className="text-gradient">Me</span>
         </h2>
         
         <div className="grid lg:grid-cols-2 gap-12 items-start">

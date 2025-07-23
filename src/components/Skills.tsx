@@ -103,13 +103,23 @@ export const Skills = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-20 px-6 bg-background">
-      <div className="container mx-auto max-w-6xl">
+    <section ref={sectionRef} id="skills" className="py-20 px-6 bg-background relative">
+      {/* Floating code snippets background */}
+      <div className="absolute inset-0 overflow-hidden opacity-5">
+        <div className="absolute top-20 left-10 font-mono text-primary transform rotate-12">{'{ code: "art" }'}</div>
+        <div className="absolute top-40 right-20 font-mono text-accent transform -rotate-6">{'function() { return magic; }'}</div>
+        <div className="absolute bottom-32 left-20 font-mono text-primary transform rotate-6">{'<creativity />'}</div>
+        <div className="absolute bottom-20 right-10 font-mono text-accent transform -rotate-12">{'console.log("innovation");'}</div>
+      </div>
+      
+      <div className="container mx-auto max-w-6xl relative z-10">
         <h2 
           ref={titleRef}
-          className="text-4xl md:text-5xl font-bold text-center mb-16 text-gradient"
+          className="text-4xl md:text-5xl font-bold text-center mb-16 font-orbitron"
         >
-          Skills & Technologies
+          <span className="neon-text">Skills</span>{' '}
+          <span className="text-gradient">&</span>{' '}
+          <span className="neon-text">Technologies</span>
         </h2>
         
         <div ref={cardsRef} className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">

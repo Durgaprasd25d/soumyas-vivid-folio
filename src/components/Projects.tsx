@@ -132,13 +132,20 @@ export const Projects = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-20 px-6 bg-background">
-      <div className="container mx-auto max-w-6xl">
+    <section ref={sectionRef} id="projects" className="py-20 px-6 bg-background relative">
+      {/* Animated geometric background */}
+      <div className="absolute inset-0 overflow-hidden opacity-5">
+        <div className="absolute top-20 left-20 w-40 h-40 border border-primary transform rotate-45 animate-spin" style={{ animationDuration: '20s' }}></div>
+        <div className="absolute bottom-20 right-20 w-32 h-32 border border-accent transform -rotate-45 animate-spin" style={{ animationDuration: '15s', animationDirection: 'reverse' }}></div>
+      </div>
+      
+      <div className="container mx-auto max-w-6xl relative z-10">
         <h2 
           ref={titleRef}
-          className="text-4xl md:text-5xl font-bold text-center mb-16 text-gradient"
+          className="text-4xl md:text-5xl font-bold text-center mb-16 font-orbitron"
         >
-          Featured Projects
+          <span className="neon-text">Featured</span>{' '}
+          <span className="text-gradient">Projects</span>
         </h2>
         
         <div ref={projectsRef} className="grid md:grid-cols-2 gap-8">

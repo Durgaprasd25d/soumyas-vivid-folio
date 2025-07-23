@@ -47,13 +47,19 @@ export const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer ref={footerRef} className="bg-primary text-primary-foreground py-12 px-6">
-      <div className="container mx-auto max-w-6xl">
+    <footer ref={footerRef} className="bg-card border-t border-primary/20 text-card-foreground py-12 px-6 relative">
+      {/* Footer background effect */}
+      <div className="absolute inset-0 bg-gradient-to-t from-primary/5 to-transparent"></div>
+      
+      <div className="container mx-auto max-w-6xl relative z-10">
         <div ref={contentRef} className="text-center space-y-8">
           {/* Main Content */}
           <div className="space-y-4">
-            <h3 className="text-2xl font-bold">Soumyaranjan Maharana</h3>
-            <p className="text-primary-foreground/80 max-w-md mx-auto">
+            <div className="font-orbitron text-3xl font-bold neon-text">
+              &lt;SM/&gt;
+            </div>
+            <h3 className="text-xl font-semibold">Soumyaranjan Maharana</h3>
+            <p className="text-muted-foreground max-w-md mx-auto font-mono">
               Building the future, one line of code at a time. 
               Let's create something amazing together.
             </p>
